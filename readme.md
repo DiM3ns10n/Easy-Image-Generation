@@ -1,4 +1,4 @@
-# Simple Image Generator
+# Easy Image Generation
 
 ## What can it do?
 
@@ -42,5 +42,5 @@ Simple Image Generator is a program that generates images using StableDiffusion.
     ```
 8. Run `image_generator_webui.py` using Streamlit:
     ```bash
-    streamlit run 02_image_generator_webui.py
+    streamlit run Home.py
     ```
