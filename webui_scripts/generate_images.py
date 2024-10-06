@@ -28,7 +28,7 @@ def generate(pipeline, width, height,
         if p < 90:
             progress_bar.progress(p, f"Progress: {p}%")
         else:
-            text = f'Almost done!' if p%2 == 0 else 'Please wait'
+            text = f'Almost done!' if p%2 == 0 else 'Please wait...'
             progress_bar.progress(90, f"Progress: 90%. {text}")
         return callback_kwargs
 
