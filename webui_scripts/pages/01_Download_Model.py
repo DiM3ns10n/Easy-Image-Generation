@@ -29,12 +29,15 @@ model_download_status = st.empty()
 if st.button('Download Model'):
     
     if not os.path.exists(model_path):
-        model_download_status.write('Downloading Model. Please wait...')
-        pipe = DiffusionPipeline.from_pretrained(model_name)
-        pipe.save_pretrained(model_path)
+        with st.spinner('Downloading Model. Please wait...'):
+            # model_download_status.write('Downloading Model. Please wait...')
+            pipe = DiffusionPipeline.from_pretrained(model_name)
+            pipe.save_pretrained(model_path)
+        
 
         if os.path.exists(model_path):
-            model_download_status.write('Model Downloaded successfully')
+            st.success('Model Downloaded successfully')
+            # model_download_status.write('Model Downloaded successfully')
         else:
             model_download_status.write('There was an error')
     else:
@@ -46,7 +49,7 @@ lora_dir = os.path.join(parent_dir, "loras")
 st.markdown("## LORA")
 
 st.text('Download a Lora from Civitai')
-st.text('Please paste the download link for the LoRA model. Ensure that the correct LoRA URL is copied, and remember to add your CivitAI API key from the keys page to download LoRA models.')
+st.text_area('Please paste the download link for the LoRA model. Ensure that the correct LoRA URL is copied, and remember to add your CivitAI API key from the keys page to download LoRA models.')
 
 lora_name = st.text_input("Enter the LORA model name", key="lora_name")
 lora_url = st.text_input("Enter the LORA model url", key="lora_url")
@@ -64,12 +67,15 @@ if st.button('submit', key='submit_lora'):
     lora_url = f'{lora_url}&token={civit_ai_login_key}'
 
     if not os.path.exists(lora_path):
-        lora_download_status.write("Downloading LORA model from Civitai")
-        response = requests.get(lora_url)
-        with open(lora_path, 'wb') as f:
-            f.write(response.content)
+        with st.spinner('Downloading Model. Please wait...'):
+    
+            response = requests.get(lora_url)
+            with open(lora_path, 'wb') as f:
+                f.write(response.content)
         if os.path.exists(lora_path):
-            lora_download_status.write('Lora downloaded successfully')
+            st.success('LORA model downloaded successfully')
+        else:
+            lora_download_status.write('There was an error')
             
     else:
             lora_download_status.write("LORA model already exists, Loading LORA model")
