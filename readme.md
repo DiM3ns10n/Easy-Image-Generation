@@ -4,12 +4,12 @@
 
 Simple Image Generator is a program that generates images using StableDiffusion. Though a bit slow, this web app can run StableDiffusion and Stable Diffusion XL models on low VRAM (minimum of 4 GB). No need to worry about which prompts to use, as the prompt enhancer helps create beautiful images from basic input prompts. It also supports the ability to use LoRA (Low-Rank Adaptation).
 
-## Why
+## Why?
 
 - Simple UI
 - Low VRAM usage (can run on GPUs with 4 GB RAM)
 
-## Setup
+## Setup.
 
 1. Install Python 3.11.6
 2. Install PyTorch with GPU support:
