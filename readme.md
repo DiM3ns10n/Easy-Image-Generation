@@ -14,18 +14,18 @@ Simple Image Generator is a program that generates images using StableDiffusion.
 1. Install Python 3.11.6
 2. Install PyTorch with GPU support:
     ```bash
-    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
     ```
 3. Install Ollama (necessary for prompt enhancement)
 4. Create a new directory called `Image-Generator` and clone this repo into that directory.
 5. Create a virtual environment inside the `Image-Generator` directory using a terminal with Python 3.11.6:
     - For Windows:
       ```bash
-      virtualenv -p path\to\python.exe .venv
+      virtualenv -p 'path\to\python3.11.6\python.exe' .venv
       ```
     - For Linux:
       ```bash
-      virtualenv -p path/to/python .venv
+      virtualenv -p 'path/to/python3.11.6/python' .venv
       ```
 6. Activate the virtual environment:
     - For Windows:
